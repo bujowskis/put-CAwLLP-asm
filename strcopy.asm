@@ -24,7 +24,7 @@ main:
 	mov	al, 0
 	call	scanf wrt ..plt
 
-	; Copy the contents, bit by bit
+	; Copy the contents, byte by byte
 	lea	rsi, [input]	; pointer to the input
 	lea	rdi, [output]	; pointer to the output
 	copy_loop:
@@ -33,16 +33,8 @@ main:
 		cmp	al, 0
 		je	print
 		jmp	copy_loop
-		;movsb
-		;movzx	eax, byte [rdi]
-		;cmp	eax, 0
-		;je	print
-		;inc	rsi
-		;inc	rdi
-		;jmp	copy_loop
 
 	print:
-
 	; Print the copied string
 	lea	rsi, [output]
 	lea	rdi, [format_out]
