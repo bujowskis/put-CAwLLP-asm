@@ -8,7 +8,7 @@ clean:
 	$(RM) $(objects) $(outputs)
 
 %.o: %.asm
-	nasm -f elf64 $^
+	nasm -f elf64 -Fdwarf $^
 
 %: %.o
 	gcc -o $@ $^

@@ -42,4 +42,5 @@ main:
 	call	printf wrt ..plt
 
 	add	rsp, 8
+	sub	rax, rax
 	ret
